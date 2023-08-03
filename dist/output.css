@@ -548,6 +548,13 @@ video {
   max-width: 90rem;
   align-items: center;
   justify-content: space-between;
+  padding: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .header .header__wrapper {
+    padding: 0;
+  }
 }
 
 .header .branding {

@@ -29,7 +29,7 @@ input[type="search"]::-webkit-search-results-decoration {
         @apply bg-dark fixed w-full
     }
     .header .header__wrapper{
-        @apply max-w-[90rem] mx-auto flex items-center justify-between
+        @apply max-w-[90rem] mx-auto flex items-center justify-between p-[1rem] lg:p-[0]
     }
     .header .branding{
         @apply flex items-center gap-[1rem]
