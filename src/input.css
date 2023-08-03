@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+.btn{
+    display:inline-block;
+    padding:1rem;
+    border:1px solid transparent;
+}
+.btn.bg--blue{
+    @apply bg-asul hover:bg-[#0071bc] text-light
+}
+
+/*remove clear or "X" button from input type search*/
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { 
+   @apply hidden 
+}
+
+@layer components{
+    .header{
+        @apply bg-dark fixed w-full
+    }
+    .header .header__wrapper{
+        @apply max-w-[90rem] mx-auto flex items-center justify-between
+    }
+    .header .branding{
+        @apply flex items-center gap-[1rem]
+    }
+    .header .branding h3{
+        @apply text-light text-[1.2rem] font-bold
+    }
+    .header .header__nav{
+        @apply absolute bg-dark top-[5rem] left-0 w-full flex flex-col max-h-[0rem] overflow-y-hidden transition-all
+        lg:static lg:flex-row lg:max-h-fit lg:w-fit
+    }
+    .header .header__nav.open{
+        @apply max-h-[28.5rem] transition-all overflow-y-scroll
+    }
+    .header .header__nav li{
+        @apply p-[1rem] lg:py-0
+    } 
+    .header .header__nav li a{
+        @apply text-light lg:text-gray-400 hover:text-light
+    }
+    .header .header__nav li#search, .header .header__nav li#download{
+        @apply lg:hidden
+    }
+    .toggle__menu{
+        @apply flex flex-col gap-[.2rem] lg:hidden
+    }
+    .toggle__menu span{
+        @apply w-[2rem] h-[.3rem] bg-light block rounded-full
+    }
+    .header .header__actions ul{
+        @apply hidden lg:flex
+    }
+    .header .header__actions input[type=search]::-ms-clear{
+        @apply lg:hidden
+    }
+    .header .header__actions input{
+        @apply lg:h-full  lg:bg-gray-600 lg:text-light lg:px-[2rem]
+    }
+    .header .header__actions input::placeholder{
+        @apply text-light
+    }
+    .header .header__actions input:focus{
+        @apply lg:outline-0
+    }
+    .header .header__actions li i{
+        @apply lg:text-light lg:translate-x-[1.5rem]
+    }
+}
